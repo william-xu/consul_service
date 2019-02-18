@@ -31,20 +31,20 @@ spring:
 
 example, an application with the name "testApp" and with the "dev" profile will have the following property sources created:
 
-config/testApp,dev/
-config/testApp/
-config/application,dev/
-config/application/    
+config/testApp,dev/  
+config/testApp/  
+config/application,dev/  
+config/application/  
     
 The most specific property source is at the top, with the least specific at the bottom. Properties in the config/application folder are applicable to all applications using consul for configuration. Properties in the config/testApp folder are only available to the instances of the service named "testApp".
 
 Configuration is currently read on startup of the application. Sending a HTTP POST to /refresh will cause the configuration to be reloaded. Section 4.3, “Config Watch” will also automatically detect changes and reload the application context.
 
 YAML must be set in the appropriate data key in consul. Using the defaults above the keys would look like:
-config/testApp,dev/data
-config/testApp/data
-config/application,dev/data
-config/application/data
+config/testApp,dev/data  
+config/testApp/data  
+config/application,dev/data  
+config/application/data  
 
 To disable the Config Watch set spring.cloud.consul.config.watch.enabled=false.
 
@@ -88,4 +88,4 @@ spring:
 ```
 ## 问题
 	* 配置在application下面，即全局配置的刷新要比服务级别配置的刷新慢不少，服务级别的默认是1秒，改动后几乎就立刻刷新了，全局配置的刷新在哪里设置？
-	* git2consul     
+	* git2consul使用？
