@@ -9,6 +9,7 @@ SpringBoot注册到consul以及使用consul作为配置中心的示例。
 
   * 在consul服务端Key/Value页面创建key "config/consul_service,dev/data"
   * 配置Value内容如下，并在右下角设置为YAML：
+```Yaml  
 springDatasourceUrl: "jdbc:mysql://192.168.43.101:3306/demodb"
 signingKey: "34234234"
 spring:
@@ -19,6 +20,7 @@ spring:
     password: "123456"
     testWhileIdle: "true"
     validationQuery: "SELECT 1"
+```    
   * key相关解说：
      * "/"表明前面的是文件夹，","逗号也是属于名称的一部分，这里逗号后面为profile名称
      * "config/consul_service,dev/data" 这个key保存后，会生成config、consul_service,dev两个文件夹，
@@ -49,7 +51,7 @@ You can change the data key using spring.cloud.consul.config.data-key
 Consul Config may be customized using the following properties:
 
 bootstrap.yml. 
-
+```Yaml
 spring:
   cloud:
     consul:
@@ -58,7 +60,7 @@ spring:
         prefix: configuration
         defaultContext: apps
         profileSeparator: '::'
-        
+```     
 * enabled:  			setting this value to "false" disables Consul Config
 * prefix:  			sets the base folder for configuration values
 * defaultContext: 	sets the folder name used by all applications
@@ -68,21 +70,20 @@ spring:
 ### 配置示例
 假如创建的key为： config2/consul_service,prod/data2    
 那么对应项目bootstrap.yml的相关配置：
-spring:
-  application:
-    name: consul_service
-  profiles:
-    active: prod    
-  cloud:
-    consul:
-      config:
-        format: YAML
-        enabled: true
-        prefix: config2
-        data-key: data2   
-
-    
-
+```Yaml
+spring:  
+  application:  
+    name: consul_service  
+  profiles:  
+    active: prod  
+  cloud:  
+    consul:  
+      config:  
+        format: YAML  
+        enabled: true  
+        prefix: config2  
+        data-key: data2  
+```
 ## 问题
 	* 配置在application下面，即全局配置的刷新要比服务级别配置的刷新慢不少，服务级别的默认是1秒，改动后几乎就立刻刷新了，全局配置的刷新在哪里设置？
 	* git2consul     
