@@ -20,9 +20,9 @@ spring:
     testWhileIdle: "true"
     validationQuery: "SELECT 1"
   * key相关解说：
-    1）"/"表明前面的是文件夹，","逗号也是属于名称的一部分，这里逗号后面为profile名称
-    2）"config/consul_service,dev/data" 这个key保存后，会生成config、consul_service,dev两个文件夹，
-                   在consul_service,dev文件夹下生成data数据项，保存上面配置的Value内容    
+     * "/"表明前面的是文件夹，","逗号也是属于名称的一部分，这里逗号后面为profile名称
+     * "config/consul_service,dev/data" 这个key保存后，会生成config、consul_service,dev两个文件夹，
+                     在consul_service,dev文件夹下生成data数据项，保存上面配置的Value内容    
     
 ## Distributed Configuration with Consul
 example, an application with the name "testApp" and with the "dev" profile will have the following property sources created:
@@ -64,7 +64,8 @@ prefix:  			sets the base folder for configuration values
 defaultContext: 	sets the folder name used by all applications
 profileSeparator:	sets the value of the separator used to separate the profile name in property sources with profiles
 
-==============================================================
+
+###配置示例
 假如创建的key为： config2/consul_service,prod/data2    
 那么对应项目bootstrap.yml的相关配置：
 spring:
@@ -79,7 +80,7 @@ spring:
         enabled: true
         prefix: config2
         data-key: data2   
-===============================================================
+
     
 
 ## 问题
