@@ -59,10 +59,10 @@ spring:
         defaultContext: apps
         profileSeparator: '::'
         
-enabled:  			setting this value to "false" disables Consul Config
-prefix:  			sets the base folder for configuration values
-defaultContext: 	sets the folder name used by all applications
-profileSeparator:	sets the value of the separator used to separate the profile name in property sources with profiles
+* enabled:  			setting this value to "false" disables Consul Config
+* prefix:  			sets the base folder for configuration values
+* defaultContext: 	sets the folder name used by all applications
+* profileSeparator:	sets the value of the separator used to separate the profile name in property sources with profiles
 
 
 ### 配置示例
