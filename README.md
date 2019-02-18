@@ -65,7 +65,7 @@ defaultContext: 	sets the folder name used by all applications
 profileSeparator:	sets the value of the separator used to separate the profile name in property sources with profiles
 
 
-###配置示例
+### 配置示例
 假如创建的key为： config2/consul_service,prod/data2    
 那么对应项目bootstrap.yml的相关配置：
 spring:
