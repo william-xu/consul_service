@@ -2,7 +2,7 @@
 
 SpringBoot注册到consul以及使用consul作为配置中心的示例。
 
-运行示例需要启动consul服务节点并且在上面设置配置信息，具体可查看下面，启动前需要修改bootstrap.yml中的本地配置
+运行示例需要启动consul服务节点并且在上面设置配置信息，程序运行不需要连接到数据库，只是使用数据库配置作为示例。具体配置信息可查看下面配置项，启动前需要修改bootstrap.yml中的本地配置
 
 
 ## 配置
@@ -29,7 +29,7 @@ spring:
 ## Distributed Configuration with Consul
 摘选自[Spring Cloud Consul](https://cloud.spring.io/spring-cloud-static/spring-cloud-consul/2.0.1.RELEASE/single/spring-cloud-consul.html)
 
-example, an application with the name "testApp" and with the "dev" profile will have the following property sources created:
+For example, an application with the name "testApp" and with the "dev" profile will have the following property sources created:
 
 config/testApp,dev/  
 config/testApp/  
