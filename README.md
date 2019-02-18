@@ -25,8 +25,10 @@ spring:
      * "/"表明前面的是文件夹，","逗号也是属于名称的一部分，这里逗号后面为profile名称
      * "config/consul_service,dev/data" 这个key保存后，会生成config、consul_service,dev两个文件夹，
                      在consul_service,dev文件夹下生成data数据项，保存上面配置的Value内容    
-    
+        
 ## Distributed Configuration with Consul
+摘选自[Spring Cloud Consul](https://cloud.spring.io/spring-cloud-static/spring-cloud-consul/2.0.1.RELEASE/single/spring-cloud-consul.html)
+
 example, an application with the name "testApp" and with the "dev" profile will have the following property sources created:
 
 config/testApp,dev/
