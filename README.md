@@ -29,6 +29,7 @@ spring:
 ## Distributed Configuration with Consul
 摘选自[Spring Cloud Consul](https://cloud.spring.io/spring-cloud-static/spring-cloud-consul/2.0.1.RELEASE/single/spring-cloud-consul.html)
 
+Spring Cloud Consul Config is an alternative to the Config Server and Client. Configuration is loaded into the Spring Environment during the special "bootstrap" phase. Configuration is stored in the /config folder by default. Multiple PropertySource instances are created based on the application’s name and the active profiles that mimicks the Spring Cloud Config order of resolving properties.
 For example, an application with the name "testApp" and with the "dev" profile will have the following property sources created:
 
 config/testApp,dev/  
