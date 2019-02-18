@@ -1,0 +1,37 @@
+#If you use Spring Cloud Consul Config, this values will need to be placed in bootstrap.yml instead of application.yml
+spring:
+  application:
+    name: consul_service
+  profiles:
+    active: dev
+  cloud:
+    consul:
+      host: 192.168.43.101
+      port: 8500
+      discovery: 
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 15s
+        preferIpAddress: true  
+      config:
+        format: YAML
+        enabled: true
+        prefix: config
+#        prefix: configuration
+#        data-key: data_v2
+#        defaultContext: apps
+#        profileSeparator: ':'
+#        watch.enabled: false
+#        watch.delay: 1000
+       
+management:
+  endpoints:
+    web:
+      exposure:
+        include: shutdown,health,info
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+      
+ 
