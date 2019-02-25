@@ -13,7 +13,7 @@ SpringBoot注册到consul以及使用consul作为配置中心的示例。
 springDatasourceUrl: "jdbc:mysql://192.168.43.101:3306/demodb"
 signingKey: "34234234"
 spring:
-  database:
+  datasource:
     driverClassName: "com.mysql.jdbc.Driver"
     url: "jdbc:mysql://192.168.43.80:3306/demodb?useUnicode=true&characterEncoding=utf-8&useSSL=false"
     username: "root"
